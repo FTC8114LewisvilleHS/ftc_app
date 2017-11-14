@@ -50,7 +50,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Use This: Single Gamepad", group="Iterative Opmode")
+@TeleOp(name="Use This: 1 Driver", group="Iterative Opmode")
 //@Disabled
 public class Competition2SingleGamepad extends OpMode
 {
@@ -61,7 +61,7 @@ public class Competition2SingleGamepad extends OpMode
     private DcMotor pitch = null;
     private DcMotor extension = null;
     private Servo leftClaw = null;
-    private Servo rightClaw = null;//NightClub
+    private Servo rightClaw = null;
     ColorSensor color;
 
     /*
@@ -119,10 +119,10 @@ public class Competition2SingleGamepad extends OpMode
     @Override
     public void loop() {
 
-        int min = -240;//was 0
-        int max = 600;
+        int min = -240;//was 0, then -240
+        int max = 600;//was 600
 
-        if(gamepad1.a){
+        if(gamepad1.y){
             if(pitch.getCurrentPosition() >= max){
                 pitch.setTargetPosition(max);
             }
@@ -131,7 +131,7 @@ public class Competition2SingleGamepad extends OpMode
             }
             pitch.setPower(0.8);//was 0.4
         }
-        else if(gamepad1.y){
+        else if(gamepad1.a){
             if(pitch.getCurrentPosition() >= min){
                 pitch.setTargetPosition(min);
             }
@@ -154,7 +154,7 @@ public class Competition2SingleGamepad extends OpMode
         }
 
         if(gamepad1.left_bumper){
-            extension.setPower(-gamepad1.left_trigger);
+            extension.setPower(-0.5);
         }
         else{
             extension.setPower(gamepad1.left_trigger);
