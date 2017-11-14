@@ -53,7 +53,7 @@ import com.qualcomm.robotcore.util.Range;
  */
 
 @TeleOp(name="Use This!", group="Iterative Opmode")
-//@Disabled
+@Disabled
 public class CompetitionOpmode extends OpMode
 {
     // Declare OpMode members.
@@ -63,7 +63,7 @@ public class CompetitionOpmode extends OpMode
     private DcMotor pitch = null;
     private DcMotor extension = null;
     private Servo leftClaw = null;
-    private Servo rightClaw = null;//NightClub
+    private Servo rightClaw = null;
     ColorSensor color;
 
     /*

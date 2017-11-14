@@ -64,7 +64,7 @@ public class BlueAutonomous extends LinearOpMode {
     private DcMotor pitch = null;
     private DcMotor extension = null;
     private Servo leftClaw = null;
-    private Servo rightClaw = null;//NightClub
+    private Servo rightClaw = null;
     ColorSensor color;
 
     @Override
@@ -92,8 +92,8 @@ public class BlueAutonomous extends LinearOpMode {
         waitForStart();
         runtime.reset();
 
-        leftDrive.setPower(0.5);
-        rightDrive.setPower(0.5);
+        leftDrive.setPower(0.45);
+        rightDrive.setPower(0.45);
         sleep(1600);
         leftDrive.setPower(0);
         rightDrive.setPower(0);

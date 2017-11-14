@@ -50,9 +50,9 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Bad", group="Iterative Opmode")
+@TeleOp(name="Use This: 2 Drivers", group="Iterative Opmode")
 //@Disabled
-public class Bad extends OpMode
+public class Competition2DoubleGamepad extends OpMode
 {
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
@@ -61,7 +61,7 @@ public class Bad extends OpMode
     private DcMotor pitch = null;
     private DcMotor extension = null;
     private Servo leftClaw = null;
-    private Servo rightClaw = null;//NightClub
+    private Servo rightClaw = null;
     ColorSensor color;
 
     /*
@@ -122,7 +122,7 @@ public class Bad extends OpMode
         int min = -240;//was 0
         int max = 600;
 
-        if(gamepad2.a){
+        if(gamepad2.a){//todo change to y
             if(pitch.getCurrentPosition() >= max){
                 pitch.setTargetPosition(max);
             }
@@ -131,7 +131,7 @@ public class Bad extends OpMode
             }
             pitch.setPower(0.8);//was 0.4
         }
-        else if(gamepad2.y){
+        else if(gamepad2.y){//todo change to x
             if(pitch.getCurrentPosition() >= min){
                 pitch.setTargetPosition(min);
             }
